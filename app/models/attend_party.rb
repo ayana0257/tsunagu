@@ -1,0 +1,2 @@
+class AttendParty < ApplicationRecord
+end

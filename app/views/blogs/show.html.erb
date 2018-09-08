@@ -1,0 +1,8 @@
+
+<h4>title</h4>
+  <%= @blog.title %>
+  </br><%= attachment_image_tag @blog, :image, :fill, 60, 60 %>
+  </br><%= @blog.body %>
+
+  <%= link_to "edit", edit_blog_path %>
+  <%= link_to "削除", destroy_blog_path(@blog.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>

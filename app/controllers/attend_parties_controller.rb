@@ -1,0 +1,2 @@
+class AttendPartiesController < ApplicationController
+end

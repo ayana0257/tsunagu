@@ -1,0 +1,16 @@
+<h2>editページ</h2>
+
+<%= form_for(@user) do |f| %>
+  <h4>name</h4>
+  <%= f.text_field :name %>
+  <h4>profile</h4>
+  <%= f.text_field :profile %>
+  <h4>画像</h4>
+  <%= f.attachment_field :image %>
+  <h4>メールアドレス</h4>
+  <%= f.email_field :email %>
+  <h4>新しいパスワード</h4>
+  <%= f.password_field :password %>
+  <%= f.submit '更新' %>
+<% end %>
+

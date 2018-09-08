@@ -1,0 +1,32 @@
+<h2>party一覧</h2>
+
+
+<table class="table table-hover">
+<% @parties.each do |party| %>
+  <tr>
+	<td>日付</td>
+	<td><%= party.date %></td>
+  </tr>
+  <tr>
+  	<td>場所</td>
+  	<td><%= party.place %></td>
+  </tr>
+  <tr>
+    <td>参加可能人数</td>
+    <td><%= party.attend_number %>人</td>
+  </tr>
+  <tr>
+    <td>もちもの</td>
+    <td><%= party.belongings %></td>
+  </tr>
+  <tr>
+    <td>お問い合わせ先</td>
+    <td><%= party.contact %></td>
+  </tr>
+  <tr>
+  	<td>パーティーの詳細</td>
+  	<td><%= party.message %></td>
+  </tr>
+  <td><%= link_to "詳細", party_path(party.id) %></td>
+  <% end %>
+</table>

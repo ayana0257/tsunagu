@@ -1,0 +1,20 @@
+<h2>Gather people,
+Hold party!</h2>
+
+
+<%= form_for(@party) do |f| %>
+  <h4>日時</h4>
+    <%= f.text_field :date %>
+  <h4>場所</h4>
+    <%= f.text_field :place %>
+  <h4>参加人数</h4>
+    <%= f.text_field :attend_number %>人
+  <h4>もちもの</h4>
+    <%= f.text_area :belongings %>
+  <h4>お問い合わせ先</h4>
+    <%= f.text_field :contact %>
+  <h4>参加者さんへ</h4>
+    <%= f.text_area :message %>
+
+    <%= f.submit "投稿" %>
+<% end %>
