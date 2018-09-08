@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 2018_09_07_023817) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.string "user_id"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_023817) do
     t.string "date"
     t.string "place"
     t.integer "attend_number"
+    t.integer "attend_price"
     t.text "belongings"
     t.string "contact"
     t.text "message"

@@ -16,7 +16,7 @@ class BlogsController < ApplicationController
 
 	def index
 		@blogs = Blog.all
-		@user = User.all
+		@user = current_user
 	end
 
 	def edit
