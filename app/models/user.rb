@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :blogs
+  has_many :favorites
+  has_many :parties, through: :favorites
   attachment :image
 end

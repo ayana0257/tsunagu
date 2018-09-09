@@ -14,3 +14,7 @@
   <%= @party.contact %>
 <h4>パーティーの詳細</h4>
   <%= @party.message %>
+
+  
+  <%= link_to "お気に入り", add_party_path(@party), method: :post %>
+  <%= link_to "戻る", parties_path %>

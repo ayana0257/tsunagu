@@ -13,4 +13,14 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :edit, :update]
   resources :blogs, only: [:new, :create, :show, :edit, :update, :index]
   resources :parties, only: [:new, :create, :show, :index]
+  resources :favorites, only: [:index, :destroy]
+
+  # resource :sessions, only: [:new, :create, :destroy]
+  resources :parties do
+    member do
+    post "add", to: "favorites#create"
+    delete "/add", to: "favorites#destroy"
+    end
+  end
+
 end

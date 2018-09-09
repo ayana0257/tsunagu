@@ -1,0 +1,43 @@
+<h4>あなたのお気に入り一覧</h4>
+
+<% @favorite.each do |favorite| %>
+	<% party = Party.find(favorite.party_id) %>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<td>日付</td>
+				<td><%= party.date %></td>
+			</tr>
+			<tr>
+				<td>場所</td>
+				<td><%= party.place %></td>
+			</tr>
+			<tr>
+				<td>参加可能人数</td>
+				<td><%= party.attend_number %>人</td>
+			</tr>
+			<tr>
+				<td>参加費用</td>
+				<td><%= party.attend_price %>円</td>
+			</tr>
+			<tr>
+				<td>もちもの</td>
+				<td><%= party.belongings %></td>
+			</tr>
+			<tr>
+				<td>連絡先</td>
+				<td><%= party.contact %></td>
+			</tr>
+			<tr>
+				<td>参加者さんへ</td>
+				<td><%= party.message %></td>
+			</tr>
+			<tr>
+				<td><%= link_to "詳細", party_path(party.id) %></td>
+				<td><%= link_to "お気に入りやめる",favorite_path(favorite), method: :delete %></td>
+			</tr>
+		</tbody>
+	</table>
+<% end %>
+<%= link_to "戻る", user_path(@user.id) %>
