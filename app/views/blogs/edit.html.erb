@@ -3,7 +3,7 @@
   <h4>title</h4>
   <%= f.text_field :title %>
   <h4>picture</h4>
-  <%= f.attachment_field :image %>
+  <%= f.attachment_field :blog_images_images, multiple: true %>
   <h4>text</h4>
   <%= f.text_field :body %>
   <%= f.submit "更新" %>

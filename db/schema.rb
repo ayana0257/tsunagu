@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_07_023817) do
+ActiveRecord::Schema.define(version: 2018_09_10_080230) do
 
   create_table "attend_parties", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "party_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_attend_parties_on_party_id"
+    t.index ["user_id"], name: "index_attend_parties_on_user_id"
+  end
+
+  create_table "blog_images", force: :cascade do |t|
+    t.string "blog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_id"
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -23,7 +34,6 @@ ActiveRecord::Schema.define(version: 2018_09_07_023817) do
     t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_id"
   end
 
   create_table "comments", force: :cascade do |t|

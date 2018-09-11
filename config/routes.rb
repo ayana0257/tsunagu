@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :blogs, only: [:new, :create, :show, :edit, :update, :index]
   resources :parties, only: [:new, :create, :show, :index]
   resources :favorites, only: [:index, :destroy]
+  resources :attend_parties, only: [:index, :destroy]
 
   # resource :sessions, only: [:new, :create, :destroy]
   resources :parties do
@@ -22,5 +23,12 @@ Rails.application.routes.draw do
     delete "/add", to: "favorites#destroy"
     end
   end
+  # resources :parties do
+  #   member do
+  #   post "add" => "attend_parties#create", as: 'add_attend_party'
+  #   delete "/add", to: "attend_parties#destroy"
+  #   end
+  # end
+
 
 end

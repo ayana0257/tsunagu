@@ -7,5 +7,7 @@ class User < ApplicationRecord
   has_many :blogs
   has_many :favorites
   has_many :parties, through: :favorites
+  has_many :attendparties, dependent: :destroy
+  has_many :parties, through: :attendparties
   attachment :image
 end

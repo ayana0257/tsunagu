@@ -1,7 +1,7 @@
-<h4>あなたのお気に入り一覧</h4>
+参加予定
 
-<% @favorite.each do |favorite| %>
-	<% party = Party.find(favorite.party_id) %>
+<% @attend_party.each do |attend_party| %>
+	<% party = Party.find(attend_party.party_id) %>
 
 	<table class="table">
 		<tbody>
@@ -35,7 +35,7 @@
 			</tr>
 			<tr>
 				<td><%= link_to "詳細", party_path(party.id) %></td>
-				<td><%= link_to "お気に入りやめる",favorite_path(favorite), method: :delete %></td>
+				<td></td>
 			</tr>
 		</tbody>
 	</table>

@@ -1,5 +1,9 @@
 class Favorite < ApplicationRecord
 
-	belongs_to :user
-	belongs_to :party
+	belongs_to :user, optional: true
+	belongs_to :party, optional: true
+	validates :user, presence: true
+	validates :party, presence: true
 end
+
+
