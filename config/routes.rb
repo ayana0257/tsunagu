@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get '/' => 'users#top'
   root to: 'users#top'
   delete '/blogs/:id' => 'blogs#destroy', as: 'destroy_blog'
+  # post "blogs/comment" => "blogs#comment"
 
   resources :users, only: [:show, :index, :edit, :update]
   resources :blogs, only: [:new, :create, :show, :edit, :update, :index]
@@ -23,6 +24,10 @@ Rails.application.routes.draw do
     delete "/add", to: "favorites#destroy"
     end
   end
+  resources :blogs do
+    resources :comments
+  end
+
   # resources :parties do
   #   member do
   #   post "add" => "attend_parties#create", as: 'add_attend_party'

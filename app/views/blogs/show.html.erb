@@ -11,6 +11,18 @@
   <% end %>
   </br><%= @blog.body %>
 
+<script type="text/javascript" src="/path/jquery-3.3.1.min.js"></script>
+<script src="js/index.js"></script>
+<div>
+    <h4>コメント</h4>
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>
+  <% if user_signed_in? %>
+    <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
+  <% end %>
+</div>
+
   <%= link_to "edit", edit_blog_path %>
   <%= link_to "削除", destroy_blog_path(@blog.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 
