@@ -4,10 +4,9 @@
 <table class="table table-hover">
   	<% @blogs.each do |blog|%>
   <tr>
-  	<td><%= attachment_image_tag @user, :image, :fill, 60, 60 %></td>
-  	<td><%= @user.name %></td>
   	<td><%= blog.title %></td>
-    <td></td>
+  	<td></td>
+  	<td><%= blog.user.name %></td>
     <td><%= link_to "詳しく", blog_path(blog.id) %></td>
   </tr>
   <% end %>

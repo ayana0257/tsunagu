@@ -1,21 +1,51 @@
-<h2>Party詳細</h2>
+<!-- <h2> パーティーの詳細です </h2> -->
 
-<h4>日付</h4>
-  <%= @party.date %>
-<h4>場所</h4>
-　<%= @party.place %>
-<h4>参加可能人数</h4>
-  <%= @party.attend_number %>人
-<h4>参加費</h4>
-  <%= @party.attend_price %>円
-<h4>もちもの</h4>
-  <%= @party.belongings %>
-<h4>お問い合わせ先</h4>
-  <%= @party.contact %>
-<h4>パーティーの詳細</h4>
-  <%= @party.message %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <table class="table">
+		<thead>
+			<tr>
+				<th><%= @party.party_name %>さんから開催情報です</th>
+			</tr>
+		</thead>
+		<tbody>
+				<tr>
+					<td>日付: <%= @party.date %></td>
+				</tr>
+				<tr>
+					<td>場所: <%= @party.place %></td>
+				</tr>
+				<tr>
+					<td>参加人数: <%= @party.attend_number %>人</td>
+				</tr>
+				<tr>
+					<td>参加費: <%= @party.attend_price %>円</td>
+				</tr>
+				<tr>
+					<td>もちもの: <%= simple_format(@party.belongings) %></td>
+				</tr>
+				<tr>
+					<td>お問い合わせ先: <%= @party.contact %></td>
+				</tr>
+				<tr>
+					<td>現在の参加予定人数: <%= @clips.length %>人</td>
+				</tr>
+				<tr>
+					<td><%= link_to "参加する", add_party_path(@party), method: :post,class: "label label-success btn btn-default btn-lg" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "戻る", parties_path, class: "label label-warning btn btn-default btn-lg" %></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-lg-6">
+		<table class="table table-bordered">
+			<thead>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th rowspan="6"><%= simple_format(@party.message) %></th>
+				</p>
+			</thead>
+		</table>
+	</div>
 
-  
-  <%= link_to "お気に入り", add_party_path(@party), method: :post %>
-  
-  <%= link_to "戻る", parties_path %>
+
+

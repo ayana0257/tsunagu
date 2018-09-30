@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+	# before_action :correct_user, only: [:edit, :update, :destroy]
+
 	def new
 		@blog = Blog.new
 		@blog.blog_images.build
@@ -7,71 +9,65 @@ class BlogsController < ApplicationController
 
 	def create
 		@blog = Blog.new(blog_params)
-		# binding.pry
+		@blog.user_id = current_user.id
 		@blog.save!
 		redirect_to blog_path(@blog.id)
 	end
 
 	def show
 		@blog = Blog.find(params[:id])
-		# @comments = @blog.comments.includes(:user).all
-		# @comment = @blog.comments.build(user_id: current_user.id) if curent_user
-		# p "--------"
-		# p @blog.blog_images
-		# p @blog.blog_images_images
-		# p "--------"
 		@comment = Comment.new
 		@comments = @blog.comments
+		# @comments = @blog.comments.includes(:user).all
+		# @comment = @blog.comments.build(user_id: current_user.id) if curent_user
 	end
-
-	def comment
-    # @comment = Comment.new(comment: params[:comment], blog_id: params[:blog_id], user_id: params[:user_id])
-    # @comment.save
-    # redirect_to :action => "show", :id => @comment.blog_id
-
-    # @blog = Blog.find(params[:id])
-    # @comment = Comment.new(comment_params.merge(blog_id: @blog.id))
-    # @comment.save!
-    # # redirect_to action: :show
-    # redirect_to :action => "show", :id => @comment.blog_id
-    # rescue
-    # 	render action: :show
-    end
-
 
 	def index
 		@blogs = Blog.all
-		@user = current_user
-		# p "--------"
-		# p @blog.blog_images
-		# p @blog.blog_images_images
-		# p "--------"
+		# @user = @blogs.user
+		# @user = User.find_by(id: 1)
+		# @blogs = Blog.where(user_id: @user.id).all
 	end
 
 	def edit
 		@blog = Blog.find(params[:id])
+		# unless @blogs == current_user.blogs
+		# redirect_to root_path
+		# end
 	end
 
 	def update
 		blog = Blog.find(params[:id])
-		blog.update!(blog_params)
+		if blog.update!(blog_params)
+		flash[:success] = '更新できました！'
 		redirect_to blog_path(blog.id)
+		else
+		render :edit
+		end
 	end
 
 	def destroy
 		blog = Blog.find(params[:id])
-		blog.destroy!
+		if blog.destroy!
+		flash[:success] = '削除しました'
 		redirect_to root_path
+		else
+		render :show
+		end
 	end
+
 
 	private
 	def blog_params
 		params.require(:blog).permit(:title, :body, {blog_images_images: []})
 	end
-	# def comment_params
-	# 	params.require(:comment).permit(
-	# 		:name, :body
-	# 	)
+
+	# def correct_user
+	# 	blog = Blog.find(params[:id])
+	# 	if current_user != user
+	# 	redirect_to root_path
+	# 	end
 	# end
+
 
 end

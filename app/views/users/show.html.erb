@@ -1,3 +1,7 @@
+<% flash.each do |message_type, message| %>
+<div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
 <h2>Your Page</h2>
 
 
@@ -20,12 +24,12 @@
     <% @blogs.each do |blog| %>
     <tr>
       <td><%= blog.title %></td>
-      <td><%= attachment_image_tag blog, :image, :fill, 60, 60 %></td>
+      <td><%= link_to "詳しく", blog_path(blog.id) %></td>
     </tr>
     <% end %>
 </table>
 
-<%= link_to "お気に入り一覧", favorites_path %>
+<%= link_to "参加予定一覧",clips_path %>
 
 <%= link_to "edit",edit_user_path(@user.id) %>
 

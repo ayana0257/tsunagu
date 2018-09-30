@@ -1,38 +1,58 @@
-<h2>party一覧</h2>
 
 
-<table class="table table-hover">
-<% @parties.each do |party| %>
-  <tr>
-	<td>日付</td>
-	<td><%= party.date %></td>
-  </tr>
-  <tr>
-  	<td>場所</td>
-  	<td><%= party.place %></td>
-  </tr>
-  <tr>
-    <td>参加可能人数</td>
-    <td><%= party.attend_number %>人</td>
-  </tr>
-  <tr>
-  	<td>参加費</td>
-    <td><%= party.attend_price %>円</td>
-  </tr>
-  <tr>
-    <td>もちもの</td>
-    <td><%= party.belongings %></td>
-  </tr>
-  <tr>
-    <td>お問い合わせ先</td>
-    <td><%= party.contact %></td>
-  </tr>
-  <tr>
-  	<td>パーティーの詳細</td>
-  	<td><%= party.message %></td>
-  </tr>
-  <td><%= link_to "詳細", party_path(party.id) %></td>
-  <% end %>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+    <h2> パーティー 一覧 </h2>
+    <h4>場所で検索してください</h4>
+        <%= form_tag parties_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :place => nil %>
+      </p>
+    <% end %>
+    </div>
+  </div>
+</div>
 
+
+<!-- <table class="table table-hover"> -->
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered">
+      <% @parties.each do |party| %>
+      <thead>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="info"><%= party.party_name %>さんより</td>
+        <!-- <td>パーティーの詳細</td> -->
+        <td rowspan="8"><%= simple_format(party.message) %></td>
+      </tr>
+      <tr>
+	     <td>日時: <%= party.date %></td>
+      </tr>
+      <tr>
+  	   <td>場所: <%= party.place %></td>
+      </tr>
+      <tr>
+        <td>参加可能人数: <%= party.attend_number %>人</td>
+      </tr>
+      <tr>
+        <td>参加費: <%= party.attend_price %>円</td>
+      </tr>
+      <tr>
+        <td>もちもの: <%= simple_format(party.belongings) %></td>
+      </tr>
+      <tr>
+        <td>お問い合わせ先: <%= party.contact %></td>
+      </tr>
+      <td><%= link_to "詳細", party_path(party.id), class: "btn btn-info" %></td>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
+</div>
 <%= link_to "戻る", root_path %>

@@ -1,22 +1,21 @@
-ここはtopページです
+<% flash.each do |message_type, message| %>
+<div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
 
 
-
-<header>
-  <% if user_signed_in? %>
-    <%= link_to "my page", user_path(current_user.id) %>
-    <%= link_to "friends", users_path %>
-    <%= link_to "logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%=link_to "login", new_user_session_path %>
-  <% end %>
- </header>
-
+<body>
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+         <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper01.png" alt="Swiper01"></div>
+        <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper02.png" alt="Swiper02"></div>
+        <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper03.png" alt="Swiper03"></div>
+    </div>
+	</div>
 <p>
 <%= link_to "投稿したい", new_blog_path %>
 <%= link_to "参加したい", parties_path %>
 <%= link_to "人を集めたい", new_party_path %>
-
 <%= link_to "投稿一覧＞", blogs_path %>
 </p>
+
+</body>

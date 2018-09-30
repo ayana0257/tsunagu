@@ -3,6 +3,8 @@ Hold party!</h2>
 
 
 <%= form_for(@party) do |f| %>
+  <h4>お名前</h4>
+    <%= f.text_field :party_name %>
   <h4>日時</h4>
     <%= f.text_field :date %>
   <h4>場所</h4>
