@@ -2,46 +2,90 @@
 <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 
-
-<body>
-<div class="tsunagu tsunagu31">
-	<div class="swiper-container">
-    	<div class="swiper-wrapper">
-        	<div class="swiper-slide">
-         		<div class="tsunagu31-inner">
-         			<img src="https://cdn.pixabay.com/photo/2018/04/11/03/13/food-3309418_640.jpg" alt="Swiper01">
-         		</div>
-        	</div>
-        	<div class="swiper-slide">
-        		<div class="tsunagu31-inner">
-        			<img src="https://cdn.pixabay.com/photo/2018/04/13/17/14/vegetable-skewer-3317060_640.jpg" alt="Swiper02">
-        		</div>
-        	</div>
-        	<div class="swiper-slide">
-        		<div class="tsunagu31-inner">
-        			<img src="https://cdn.pixabay.com/photo/2018/03/15/17/54/ham-3228979_640.jpg" alt="Swiper03">
-        		</div>
-        	</div>
-		</div>
-	<div class="swiper-button-prev">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 44">
-        <path class="c-arrow c-arrow-prev" d="M0,22L22,0l2.1,2.1L4.2,22l19.9,19.9L22,44L0,22L0,22L0,22z" />
-      </svg>
-    </div>
-    <div class="swiper-button-next">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 44">
-        <path class="c-arrow c-arrow-next" d="M27,22L27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22L27,22z" />
-      </svg>
-    </div>
-    <div class="swiper-pagination"></div>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="https://cdn.pixabay.com/photo/2017/03/27/13/54/bread-2178874_640.jpg"></div>
+    <div class="swiper-slide"><img src="https://cdn.pixabay.com/photo/2014/06/11/17/00/cook-366875_640.jpg"></div>
+    <div class="swiper-slide"><img src="https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_640.jpg"></div>
+  </div>
 </div>
 
-<p>
-<%= link_to "投稿したい", new_blog_path %>
-<%= link_to "参加したい", parties_path %>
-<%= link_to "人を集めたい", new_party_path %>
-<%= link_to "投稿一覧＞", blogs_path %>
-</p>
 
+<div class="body-text">
+  <u><h4>Principle</h4></u>
+    <p>日本では、年間1,700万とトンの食糧廃棄物が出されています。</br>
+    これは、日本におけるお米の年間収穫量に匹敵し、世界中で木々に苦しむ人々に向けた</br>
+    食糧援助量を大きく上回る量です。</br>
+    また、食べられるにも関わらず捨てられてしまう食品ロスが年間800万トンもあります。</br>
+    そして、その半分が家庭からなのです。</br>
+    こういった食品ロスは、環境への負担にもなります。</br>
+    みなさんの家庭に、使いきれず余ってしまった食材を持ち寄って、楽しく食品ロスを解決していきましょう！
+</p>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="center-block">
+
+<div class="row">
+<!-- <div class="row"> -->
+  <div class="col-xs-3 col-md-3">
+    <div class="thumbnail">
+      <img src="http://hankodeasobu.com/wp-content/uploads/kitchenware_01.png"></br>
+      <div class="caption">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "gather people", new_party_path %></h3>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+  <div class="col-xs-3 col-md-3">
+    <div class="thumbnail">
+      </br></br></br>
+      <img src="http://hankodeasobu.com/wp-content/uploads/party_01.png">
+      </br></br>
+      <div class="caption">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "party", parties_path %></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-3 col-md-3">
+    <div class="thumbnail">
+      <img src="http://hankodeasobu.com/wp-content/uploads/stationery_02.png">
+      <div class="caption">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "blog", new_blog_path %></h3>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-xs-3 col-md-3">
+    <div class="thumbnail">
+    </br>
+    </br>
+      <img src="http://hankodeasobu.com/wp-content/uploads/symbol_02.png">
+    </br>
+    </br>
+      <div class="caption">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "blog all", blogs_path %></h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
 
 </body>
+
+<footer class="footer">
+                   <div class="container">
+                          <div class="text-center">
+                              <ul class="list-inline small">
+                                  <li>お問い合わせ</li>
+                                  <li>メッセージ</li>
+                              </ul>
+                              <div class="my-5">
+                                  <h3>Tsunagu</h3>
+                                  <div class="small">Copyright © 2018 Tsunagu All Rights Reserved"</div>
+                              </div>
+                          </div>
+                   </div>
+                </footer>

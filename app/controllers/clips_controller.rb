@@ -1,7 +1,7 @@
 class ClipsController < ApplicationController
 
 	def create
-		@user_id = current_user.user_id
+		# @user_id = current_user.user_id
 		@party_id = Party.find(params[:id]).id
 		if user_signed_in?
 		@clip = Clip.new(party_id: @party_id, user_id: current_user.id)
