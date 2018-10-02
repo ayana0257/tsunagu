@@ -17,6 +17,7 @@ class PartiesController < ApplicationController
 	def index
 		@parties = Party.all
 		@parties = Party.search(params[:search])
+		@parties = Party.page(params[:page]).per(3).order('created_at DESC')
 	end
 
 

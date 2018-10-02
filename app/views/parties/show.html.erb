@@ -32,8 +32,10 @@
 					<td>現在の参加予定人数: <%= @clips.length %>人</td>
 				</tr>
 				<tr>
-					<td><%= link_to "参加する", add_party_path(@party), method: :post,class: "label label-success btn btn-default btn-lg" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "戻る", parties_path, class: "label label-warning btn btn-default btn-lg" %></td>
+					<td><%= link_to "参加する", add_party_path(@party), method: :post, class: "btn btn-info btn-lg" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "戻る", parties_path, class: "btn btn-link btn-lg" %></td>
 				</tr>
+
+
 			</tbody>
 		</table>
 	</div>
@@ -47,5 +49,6 @@
 		</table>
 	</div>
 
+	
 
 

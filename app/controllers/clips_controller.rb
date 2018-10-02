@@ -1,8 +1,7 @@
 class ClipsController < ApplicationController
 
 	def create
-
-		# @user_id = current_user.user_id
+		@user_id = current_user.user_id
 		@party_id = Party.find(params[:id]).id
 		if user_signed_in?
 		@clip = Clip.new(party_id: @party_id, user_id: current_user.id)
@@ -16,13 +15,15 @@ class ClipsController < ApplicationController
 	def destroy
 		@clip = Clip.find(params[:id])
 		if @clip.destroy
-		   redirect_to root_path
+		   redirect_to clips_path
 		end
 	end
 
 	def index
     	@user = current_user
-    	@clips = Clip.where(user_id: @user.id).all
+    	@clips = @user.clips
+    	# @clips = Clip.where(user_id: @user.id).all
+    	# @clips = Clip.page(params[:page]).per(3).order('created_at DESC')
 	end
 
 	# def index

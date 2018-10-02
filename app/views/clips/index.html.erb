@@ -1,42 +1,48 @@
-<h4>あなたの参加予定一覧</h4>
+<h4>&emsp;&emsp;&emsp;&emsp;あなたの参加予定一覧</h4>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-<% @clips.each do |clip| %>
-	<% party = Party.find(clip.party_id) %>
 
-	<table class="table">
+<div class="container">
+  <div class="row">
+  	 <table class="table table-bordered">
+    <!-- <div class="col-lg-8"> -->
+    	<!-- <table class="table"> -->
+			<% @clips.each do |clip| %>
+			<% party = Party.find(clip.party_id) %>
+
 		<tbody>
 			<tr>
-				<td>日付</td>
-				<td><%= party.date %></td>
+				<td><%= party.party_name %>さんから開催情報です</td>
+				<td rowspan="8">参加者さんへ: <%= simple_format(party.message) %></td>
 			</tr>
 			<tr>
-				<td>場所</td>
-				<td><%= party.place %></td>
+				<td>日付: <%= party.date %></td>
 			</tr>
 			<tr>
-				<td>参加可能人数</td>
-				<td><%= party.attend_number %>人</td>
+				<td>場所: <%= party.place %></td>
 			</tr>
 			<tr>
-				<td>参加費用</td>
-				<td><%= party.attend_price %>円</td>
+				<td>参加可能人数: <%= party.attend_number %>人</td>
 			</tr>
 			<tr>
-				<td>もちもの</td>
-				<td><%= party.belongings %></td>
+				<td>参加費用: <%= party.attend_price %>円</td>
 			</tr>
 			<tr>
-				<td>連絡先</td>
-				<td><%= party.contact %></td>
+				<td>もちもの: <%= simple_format(party.belongings) %></td>
 			</tr>
 			<tr>
-				<td>参加者さんへ</td>
-				<td><%= party.message %></td>
+				<td>連絡先: <%= party.contact %></td>
 			</tr>
 			<tr>
-				<td><%= link_to "詳細", party_path(party.id) %></td>
-				<td><%= link_to "参加をやめる", clip_path(party), method: :delete %></td>
+				<td><%= link_to "詳細", party_path(party), class: "btn btn-info" %>
+				&emsp;&emsp;&emsp;<%= link_to "参加をやめる", clip_path(clip), method: :delete, class: "btn btn-primary" %></td>
 			</tr>
 		</tbody>
+		<% end %>
 	</table>
-	<% end %>
+   </div>
+  </div>
+</div>
+
+
+
+<div class="text-center"><%= link_to "戻る", user_path(@user.id), class: "btn btn-link" %></div>

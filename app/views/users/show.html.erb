@@ -2,35 +2,33 @@
 <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 
-<h2>Your Page</h2>
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.name %>さんのページ</h2>
+<div class="container">
+<div class="row">
+  <div class="col-sm-6">
+    <%= attachment_image_tag @user, :image, :fill, 130, 130 %>
+  </div>
+  <div class="col-sm-6">
+    <%= @user.profile %>
+    <%= link_to "編集",edit_user_path(@user.id),class: "btn btn-default" %>
+  </div>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="container">
+  <div class="row">
+    <div class="col-lg-5">
+      <table class="table">
+        <h4>このユーザーの投稿一覧</h4>
+            <% @blogs.each do |blog| %>
+              <td><%= blog.title %></td>
+              <td><%= link_to "詳しく", blog_path(blog.id) %></td>
+            <% end %>
+          </table>
+          </div>
+        </div>
+      </div>
 
 
-<table class="table table-hover">
-    <tr>
-      <td>name</td>
-      <td><%= @user.name %></td>
-    </tr>
-    <tr>
-      <td>introduction</td>
-      <td><%= @user.profile %></td>
-    </tr>
-    <tr>
-      <td>プロフィール画像</td>
-      <td><%= attachment_image_tag @user, :image, :fill, 60, 60 %></td>
-    </tr>
-    <tr>
-      <td>このユーザーの投稿一覧</td>
-    </tr>
-    <% @blogs.each do |blog| %>
-    <tr>
-      <td><%= blog.title %></td>
-      <td><%= link_to "詳しく", blog_path(blog.id) %></td>
-    </tr>
-    <% end %>
-</table>
+<div class="text-center"><%= link_to "参加予定一覧",clips_path, class: "btn btn-info" %></div>
 
-<%= link_to "参加予定一覧",clips_path %>
-
-<%= link_to "edit",edit_user_path(@user.id) %>
-
-<%= link_to "戻る", root_path %>
+<div class="text-center"><%= link_to "戻る", root_path, class: "btn btn-link" %></div>

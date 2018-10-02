@@ -16,3 +16,17 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+window.addEventListener('DOMContentLoaded', function() {
+  var swiper = new Swiper('.tsunagu31 .swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    loop: true,
+    speed: 1000,
+    autoplay: 3000,
+    spaceBetween: 10,
+    effect: 'coverflow'
+  });
+}, false);

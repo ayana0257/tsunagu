@@ -1,12 +1,20 @@
-<h2>編集ページ</h2>
-<%= form_for(@blog) do |f| %>
-  <h4>title</h4>
-  <%= f.text_field :title %>
-  <h4>picture</h4>
-  <%= f.attachment_field :blog_images_images, multiple: true %>
-  <h4>text</h4>
-  <%= f.text_field :body %>
-  <%= f.submit "更新" %>
- <% end %>
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit your blog!</h2>
 
- <%= link_to "戻る", blog_path(@blog.id) %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+		<%= form_for(@blog) do |f| %>
+  			<h4>title</h4>
+  				<%= f.text_field :title %>
+  			<h4>picture</h4>
+  				<%= f.attachment_field :blog_images_images, multiple: true %>
+  			<h4>text</h4>
+  				<%= f.text_field :body %>
+  			&nbsp;&nbsp;&nbsp;<p><%= f.submit "更新",class: "btn btn-warning" %></p>
+ 		<% end %>
+ 	</div>
+ </div>
+</div>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "戻る", blog_path(@blog.id), class: "btn btn-link" %>

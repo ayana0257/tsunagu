@@ -4,18 +4,44 @@
 
 
 <body>
+<div class="tsunagu tsunagu31">
 	<div class="swiper-container">
-    <div class="swiper-wrapper">
-         <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper01.png" alt="Swiper01"></div>
-        <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper02.png" alt="Swiper02"></div>
-        <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper03.png" alt="Swiper03"></div>
+    	<div class="swiper-wrapper">
+        	<div class="swiper-slide">
+         		<div class="tsunagu31-inner">
+         			<img src="https://cdn.pixabay.com/photo/2018/04/11/03/13/food-3309418_640.jpg" alt="Swiper01">
+         		</div>
+        	</div>
+        	<div class="swiper-slide">
+        		<div class="tsunagu31-inner">
+        			<img src="https://cdn.pixabay.com/photo/2018/04/13/17/14/vegetable-skewer-3317060_640.jpg" alt="Swiper02">
+        		</div>
+        	</div>
+        	<div class="swiper-slide">
+        		<div class="tsunagu31-inner">
+        			<img src="https://cdn.pixabay.com/photo/2018/03/15/17/54/ham-3228979_640.jpg" alt="Swiper03">
+        		</div>
+        	</div>
+		</div>
+	<div class="swiper-button-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 44">
+        <path class="c-arrow c-arrow-prev" d="M0,22L22,0l2.1,2.1L4.2,22l19.9,19.9L22,44L0,22L0,22L0,22z" />
+      </svg>
     </div>
-	</div>
+    <div class="swiper-button-next">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 44">
+        <path class="c-arrow c-arrow-next" d="M27,22L27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22L27,22z" />
+      </svg>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
 <p>
 <%= link_to "投稿したい", new_blog_path %>
 <%= link_to "参加したい", parties_path %>
 <%= link_to "人を集めたい", new_party_path %>
 <%= link_to "投稿一覧＞", blogs_path %>
 </p>
+
 
 </body>

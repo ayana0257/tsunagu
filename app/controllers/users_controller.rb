@@ -4,20 +4,21 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
+		@users = User.page(params[:page]).per(10).order('created_at DESC')
 	end
 
 	def show
 		@user = User.find(params[:id])
-		@blogs = Blog.all
+		@blogs = @user.blogs
+		# @blogs = Blog.all
 		# @blogs = Blog.where(:user_id, @user.id)
-		# @blogs = @user.blogs
 	end
 
 	def edit
 		@user = User.find(params[:id])
-		unless @user.id == current_user.id
-		redirect_to root_path
-    end
+		# unless @user.id == current_user.id
+		# redirect_to root_path
+    # end
 	end
 
 	def update

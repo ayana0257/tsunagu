@@ -24,6 +24,7 @@ class BlogsController < ApplicationController
 
 	def index
 		@blogs = Blog.all
+		@blogs = Blog.page(params[:page]).per(10).order('created_at DESC')
 		# @user = @blogs.user
 		# @user = User.find_by(id: 1)
 		# @blogs = Blog.where(user_id: @user.id).all

@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-lg-4">
     <h2> パーティー 一覧 </h2>
-    <h4>場所で検索してください</h4>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<h5>場所で検索してください</h5>
         <%= form_tag parties_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
       <p>
         <%= text_field_tag :search, params[:search] %>
@@ -21,11 +21,8 @@
   <div class="row">
     <table class="table table-bordered">
       <% @parties.each do |party| %>
-      <thead>
-        <th></th>
-        <th></th>
-      </thead>
-      <tbody>
+
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<tbody>
       <tr>
         <td class="info"><%= party.party_name %>さんより</td>
         <!-- <td>パーティーの詳細</td> -->
@@ -55,4 +52,9 @@
     </table>
   </div>
 </div>
-<%= link_to "戻る", root_path %>
+
+<div class="text-center"><%= paginate @parties %></div>
+
+<div class="text-center"><%= link_to "戻る", root_path, class: "btn btn-link" %></div>
+
+

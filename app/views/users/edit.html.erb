@@ -1,17 +1,25 @@
-<h2>editページ</h2>
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit your profile!</h2>
 
-<%= form_for(@user) do |f| %>
-  <h4>name</h4>
-  <%= f.text_field :name %>
-  <h4>profile</h4>
-  <%= f.text_field :profile %>
-  <h4>画像</h4>
-  <%= f.attachment_field :image %>
-  <h4>メールアドレス</h4>
-  <%= f.email_field :email %>
-  <h4>新しいパスワード</h4>
-  <%= f.password_field :password %>
-  <%= f.submit '更新' %>
-<% end %>
 
-<%= link_to "戻る", user_path(@user.id) %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+        <%= form_for(@user) do |f| %>
+          <h4>name</h4>
+            <%= f.text_field :name %>
+          <h4>profile</h4>
+            <%= f.text_field :profile %>
+          <h4>プロフィール画像</h4>
+            <%= f.attachment_field :image %>
+          <h4>メールアドレス</h4>
+            <%= f.email_field :email %>
+          <h4>新しいパスワード</h4><h6>(変更しない場合は空欄のままで構いません)</h6>
+            <%= f.password_field :password %>
+          &nbsp;&nbsp;&nbsp;<p><%= f.submit "更新",class: "btn btn-warning" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "戻る", user_path(@user.id), class: "btn btn-link" %>

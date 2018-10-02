@@ -2,22 +2,27 @@
 <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 
-<h4>title</h4>
-  <%= @blog.title %>
-  </br>
-  <% if @blog.blog_images.present? %>
-	  <% @blog.blog_images.each do |image| %>
-	    <%= attachment_image_tag image, :image, :fill, 200, 200 %>
-	  <% end %>
-	  <% else %>
-	  画像無し
-  <% end %>
-  </br><%= @blog.body %>
 
-<script type="text/javascript" src="/path/jquery-3.3.1.min.js"></script>
-<script src="js/index.js"></script>
-<div>
-    <h4>コメント</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h3>title</h3>
+        <%= @blog.title %>
+      </div>
+      <div class="col-lg-6">
+        </br></br></br></br></br></br><%= @blog.body %>
+        </br><% if @blog.blog_images.present? %>
+              <% @blog.blog_images.each do |image| %>
+              <%= attachment_image_tag image, :image, :fill, 100, 100 %>
+              <% end %>
+              <% else %>
+                画像無し
+              <% end %>
+
+        <script type="text/javascript" src="/path/jquery-3.3.1.min.js"></script>
+        <script src="js/index.js"></script>
+    <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;<h6>コメント</h6>
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments } %>
     </div>
@@ -26,7 +31,13 @@
   <% end %>
 </div>
 
-  <%= link_to "edit", edit_blog_path %>
-  <%= link_to "削除", destroy_blog_path(@blog.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+ <%= link_to "edit", edit_blog_path, class: "btn btn-info" %>
+  <%= link_to "削除", destroy_blog_path(@blog.id), method: :delete, class: "btn btn-primary", "data-confirm" => "本当に削除しますか？" %>
 
-  <%= link_to "戻る", blogs_path %>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="text-center"><%= link_to "戻る", blogs_path %></div>
