@@ -2,6 +2,9 @@
 <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 
+
+<body>
+
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide"><img src="https://cdn.pixabay.com/photo/2017/03/27/13/54/bread-2178874_640.jpg"></div>
@@ -19,53 +22,54 @@
     また、食べられるにも関わらず捨てられてしまう食品ロスが年間800万トンもあります。</br>
     そして、その半分が家庭からなのです。</br>
     こういった食品ロスは、環境への負担にもなります。</br>
-    みなさんの家庭に、使いきれず余ってしまった食材を持ち寄って、楽しく食品ロスを解決していきましょう！
-</p>
+    「三人寄れば文殊の知恵」。</br>
+    1人では飽きたり苦痛に思ったり限界があります。友人や家族と楽しみながらやることが大事です。</br>    みなさんの家庭に、使いきれず余ってしまった食材を持ち寄って、楽しく食品ロスを解決していきましょう！
+    </p>
 </div>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="center-block">
 
 <div class="row">
 <!-- <div class="row"> -->
-  <div class="col-xs-3 col-md-3">
+  <div class="col-xs-6 col-md-3">
     <div class="thumbnail">
       <img src="http://hankodeasobu.com/wp-content/uploads/kitchenware_01.png"></br>
-      <div class="caption">
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "gather people", new_party_path %></h3>
+      <div class="caption1">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "gather people", new_party_path %></h3>
       </div>
     </div>
   </div>
 <!-- </div> -->
 
-  <div class="col-xs-3 col-md-3">
+  <div class="col-xs-6 col-md-3">
     <div class="thumbnail">
       </br></br></br>
       <img src="http://hankodeasobu.com/wp-content/uploads/party_01.png">
       </br></br>
-      <div class="caption">
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "party", parties_path %></h3>
+      <div class="caption2">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "party", parties_path %></h3>
       </div>
     </div>
   </div>
 
-  <div class="col-xs-3 col-md-3">
+  <div class="col-xs-6 col-md-3">
     <div class="thumbnail">
       <img src="http://hankodeasobu.com/wp-content/uploads/stationery_02.png">
-      <div class="caption">
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "blog", new_blog_path %></h3>
+      <div class="caption3">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "blog", new_blog_path %></h3>
       </div>
     </div>
   </div>
 
-    <div class="col-xs-3 col-md-3">
+    <div class="col-xs-6 col-md-3">
     <div class="thumbnail">
     </br>
     </br>
       <img src="http://hankodeasobu.com/wp-content/uploads/symbol_02.png">
     </br>
     </br>
-      <div class="caption">
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "blog all", blogs_path %></h3>
+      <div class="caption4">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "blog all", blogs_path %></h3>
       </div>
     </div>
   </div>
@@ -73,7 +77,20 @@
 </div>
 </div>
 
-</body>
+<div class="tsunagu-image">
+  <div class="swiper-container1">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide1"><img src="https://media.image.infoseek.co.jp/isnews/photos/walkerplus/walkerplus_59433_0.jpg"width="200" height="200"></div>
+      <div class="swiper-slide1"><img src="https://cheko-blog.com/wp-content/uploads/2017/02/P2131188_.jpg" width="200" height="200"></div>
+      <div class="swiper-slide1"><img src="https://kinarino.k-img.com/system/press_images/001/210/311/85a68eb69f5381878fe2cb69920c73b83ea54510.jpg?1523459683" width="200" height="200"></div>
+      <div class="swiper-slide1"><img src="https://img.cpcdn.com/user_kondate_infos/74695/590x500/d8413f4fc289d5d014ddf6e9d509df54.jpg?u=9834336&p=1423829273" width="200" height="200"></div>
+      <div class="swiper-slide1"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/t/tomoko_suegami/20170523/20170523163956.jpg" width="200" height="200"></div>
+      <div class="swiper-slide1"><img src="https://blog-001.west.edge.storage-yahoo.jp/res/blog-1a-92/monsuke02jp/folder/200672/74/48454574/img_0?1418991107" width="200" height="200"></div>
+    </div>
+  </div>
+</div>
+
+
 
 <footer class="footer">
                    <div class="container">
@@ -88,4 +105,6 @@
                               </div>
                           </div>
                    </div>
-                </footer>
+</footer>
+
+</body>

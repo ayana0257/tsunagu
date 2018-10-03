@@ -9,8 +9,8 @@
     <%= attachment_image_tag @user, :image, :fill, 130, 130 %>
   </div>
   <div class="col-sm-6">
-    <%= @user.profile %>
-    <%= link_to "編集",edit_user_path(@user.id),class: "btn btn-default" %>
+    <%= simple_format(@user.profile) %>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "編集",edit_user_path(@user.id),class: "btn btn-link" %>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-lg-5">
       <table class="table">
-        <h4>このユーザーの投稿一覧</h4>
+        <h4>投稿一覧</h4>
             <% @blogs.each do |blog| %>
               <td><%= blog.title %></td>
               <td><%= link_to "詳しく", blog_path(blog.id) %></td>
