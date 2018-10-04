@@ -20,6 +20,9 @@
 					<td>参加人数: <%= @party.attend_number %>人</td>
 				</tr>
 				<tr>
+					<td>現在の参加予定人数: <%= @clips.length %>人</td>
+				</tr>
+				<tr>
 					<td>参加費: <%= @party.attend_price %>円</td>
 				</tr>
 				<tr>
@@ -27,9 +30,6 @@
 				</tr>
 				<tr>
 					<td>お問い合わせ先: <%= @party.contact %></td>
-				</tr>
-				<tr>
-					<td>現在の参加予定人数: <%= @clips.length %>人</td>
 				</tr>
 				<tr>
 					<td><%= link_to "参加する", add_party_path(@party), method: :post, class: "btn btn-info btn-lg" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "戻る", parties_path, class: "btn btn-link btn-lg" %></td>

@@ -1,0 +1,8 @@
+// $("#flash_notice").html("<%= escape_javascript(flash[:notice])%>");
+// $("#flash_notice").show(300);
+// $("#index_list").html("<%= escape_javascript( render(:partial => "index") ) %>");
+$(function() {
+ $('a[data-method="delete"]').on('ajax:success', function(xhr,data,status) {
+    $('#comment_'+data.comment.id).fadeOut();
+ });
+});
