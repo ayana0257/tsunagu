@@ -11,7 +11,7 @@
 	<h3>picture</h3><h5>(＊複数枚選択できます)</h5>
 	  <%= f.attachment_field :blog_images_images, multiple: true %>
 	<h3>text</h3>
-	  <%= f.text_field :body %>&nbsp;&nbsp;&nbsp;&nbsp;<%= f.submit "投稿する",class: "btn btn-warning" %>
+	  <%= f.text_area :body %>&nbsp;&nbsp;&nbsp;&nbsp;<%= f.submit "投稿する",class: "btn btn-warning" %>
 <% end %>
 </div>
 </div>

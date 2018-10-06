@@ -18,7 +18,7 @@ class PartiesController < ApplicationController
 		@parties = Party.all
 		# @clips = Clip.where(party_id: @party.id).all
 		@parties = Party.search(params[:search])
-		# @parties = Party.page(params[:page]).per(3).order('created_at DESC')
+		@parties = Party.page(params[:page]).per(3).order('created_at DESC')
 	end
 
 

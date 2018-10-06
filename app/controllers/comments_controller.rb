@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 	def destroy
 		@comment = Comment.find(params[:id])
 		if @comment.destroy
-			render :js => { comment: @comment }
+			render :js => {:comment => @comment }
 		end
 	end
 

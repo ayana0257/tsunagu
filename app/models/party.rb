@@ -7,6 +7,8 @@ class Party < ApplicationRecord
 	has_many :users, through: :clips
 	belongs_to :user, optional: true
 
+	default_scope -> { order(created_at: :desc) }
+
 	def self.search(search) #self.でクラスメソッドとしている
     if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
       Party.where(['place LIKE ?', "%#{search}%"])

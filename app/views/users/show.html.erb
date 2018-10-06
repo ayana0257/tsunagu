@@ -19,9 +19,11 @@
     <div class="col-lg-5">
       <table class="table">
         <h4>投稿一覧</h4>
+        <tr>
             <% @blogs.each do |blog| %>
               <td><%= blog.title %></td>
               <td><%= link_to "詳しく", blog_path(blog.id) %></td>
+            </tr>
             <% end %>
           </table>
           </div>
